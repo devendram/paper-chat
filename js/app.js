@@ -48,6 +48,7 @@
     template.avatar = avatar;
     template.color = color;
     template.target_lang = get_lang();
+    template.sub_channel = template.channel + '-' + template.target_lang;
 
     template.checkKey = function(e) {
         if(e.keyCode === 13 || e.charCode === 13) {
