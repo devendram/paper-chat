@@ -42,10 +42,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <template is="auto-binding">
 
 <!-- Use your own publish_key and subscribe_key please -->
-<core-pubnub publish_key="pub-c-5b7dd4d4-59e9-49f5-a63e-8b8e5ef6a57b" subscribe_key="sub-c-d3031a14-7436-11e5-8f6d-0619f8945a4f" uuid="{{uuid}}">
-	<core-pubnub-subscribe channel="polymer-chat" id="sub" on-callback="{{subscribeCallback}}" on-presence="{{presenceChanged}}" on-error="{{error}}">
-	    <core-pubnub-publish channel="polymer-chat" message="" id="pub" on-error="{{error}}"></core-pubnub-publish>
-		<core-pubnub-history channel="polymer-chat" count="30" on-success="{{historyRetrieved}}" on-error="{{error}}"></core-pubnub-history>
+<core-pubnub origin="blocks.pubnub.com" publish_key="pub-c-3ae88529-6439-441d-a7e3-9ba534535757" subscribe_key="sub-c-454b5f94-f77e-11e5-9086-02ee2ddab7fe" uuid="{{uuid}}">
+	<core-pubnub-subscribe channel="pubnub-chat-es" id="sub" on-callback="{{subscribeCallback}}" on-presence="{{presenceChanged}}" on-error="{{error}}">
+	    <core-pubnub-publish channel="pubnub-chat" source_lang="en" message="" id="pub" on-error="{{error}}"></core-pubnub-publish>
+		<core-pubnub-history channel="pubnub-chat" count="30" on-success="{{historyRetrieved}}" on-error="{{error}}"></core-pubnub-history>
     </core-pubnub-subscribe>
 </core-pubnub>
 
