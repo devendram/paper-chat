@@ -152,7 +152,7 @@
             avatar: avatar,
             color: color,
             text: template.input,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
             source_lang : template.lang
         };
         template.$.pub.publish();
