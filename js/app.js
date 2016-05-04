@@ -3,6 +3,7 @@
 
     var uuid, avatar, color, cat;
 
+
     // Assign a uuid made of a random cat and a random color
     var randomColor = function() {
         var colors = ['navy', 'slate', 'olive', 'moss', 'chocolate', 'buttercup', 'maroon', 'cerise', 'plum', 'orchid'];
@@ -19,6 +20,19 @@
     uuid = color + '-' + cat;
     avatar = 'images/' + cat + '.jpg';
 
+    function get_url_vars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
+    function get_lang() {
+        return (get_url_vars()['lang'] || 'en');
+    }
+
+
     function showNewest() {
         //document.querySelector('core-scaffold').$.headerPanel.scroller.scrollTop = document.querySelector('.chat-list').scrollHeight;
         var chatDiv = document.querySelector('.chat-list');
@@ -29,10 +43,11 @@
 
     var template = document.querySelector('template[is=auto-binding]');
 
-    template.channel = 'polymer-chat';
+    template.channel = 'pubnub-chat';
     template.uuid = uuid;
     template.avatar = avatar;
     template.color = color;
+    template.target_lang = get_lan();
 
     template.checkKey = function(e) {
         if(e.keyCode === 13 || e.charCode === 13) {
