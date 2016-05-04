@@ -49,9 +49,9 @@
     template.avatar = avatar;
     template.color = color;
     
-    template.target_lang = get_lang();
-    template.sub_channel = (template.target_lang)?
-                            template.channel + '-' + template.target_lang:template.channel;
+    template.lang = get_lang();
+    template.sub_channel = (template.lang)?
+                            template.channel + '-' + template.lang:template.channel;
 
     console.log('SUB Channel : ' + template.sub_channel);
 
@@ -153,6 +153,7 @@
             color: color,
             text: template.input,
             timestamp: new Date().toISOString()
+            source_lang : template.lang
         };
         template.$.pub.publish();
         template.input = '';
