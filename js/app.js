@@ -53,7 +53,7 @@
     template.sub_channel = (template.target_lang)?
                             template.channel + '-' + template.target_lang:template.channel;
 
-    console.log('SUB Channel : ' + sub_channel);
+    console.log('SUB Channel : ' + template.sub_channel);
 
 
     template.checkKey = function(e) {
