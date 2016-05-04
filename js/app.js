@@ -29,6 +29,7 @@
     }
 
     function get_lang() {
+        console.log(get_url_vars()['lang']);
         return (get_url_vars()['lang'] || 'en');
     }
 
@@ -48,8 +49,10 @@
     template.avatar = avatar;
     template.color = color;
     template.target_lang = get_lang();
-    template.sub_channel = template.channel + '-' + template.target_lang;
+    template.sub_channel = (template.target_lang)?
+                            template.channel + '-' + template.target_lang:template.channel;
 
+    console.log('SUB Channel : ' + sub_channel);
     template.checkKey = function(e) {
         if(e.keyCode === 13 || e.charCode === 13) {
             template.publish();
