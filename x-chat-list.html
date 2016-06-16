@@ -107,7 +107,10 @@ A single user list with a username, avatar, and desc.
 		<div flex>
 			<div class="username">{{username}}</div>
 			<div class="text">{{text}}</div>
-			<img src="{{gif_url}}" alt=" " title=" " style="width:304px;height:228px;">
+			<template bind if="{{gif_url}}">
+				<img src="{{gif_url}}" style="width:304px;height:228px;">
+        	</template>
+
 		</div>
 		<time class="timestamp" is="relative-time" datetime="{{timestamp}}"></time>
 	</section>
