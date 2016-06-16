@@ -153,7 +153,7 @@
             color: color,
             text: template.input,
             timestamp: new Date().toISOString(),
-            source_lang : template.lang
+            input_lang : template.lang
         };
         template.$.pub.publish();
         template.input = '';
