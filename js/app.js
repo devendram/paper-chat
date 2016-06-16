@@ -102,7 +102,24 @@
 
     template.subscribeCallback = function(e) {
         if(template.$.sub.messages.length > 0) {
-            this.displayChatList(pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages)));
+            /*
+            console.log(template.$.sub.messages);
+            var len = template.$.sub.messages.length;
+
+            var size = 100;
+            var gif = 
+            '<html><br><img class="gif" src="http://giphy.com/embed/Luv6pUwBTIeuk"' 
+                + (size ? (' height="' + size + '"') : '') + ' ></html>'; 
+
+            template.$.sub.messages[len - 1].text = gif;             
+
+            */
+
+            var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
+            console.log(a);
+
+
+            this.displayChatList(a);
         }
     };
 
