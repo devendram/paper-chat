@@ -33,6 +33,11 @@
         return (get_url_vars()['lang'] || 'en');
     }
 
+    function get_channel() {
+        console.log(get_url_vars()['channel']);
+        return (get_url_vars()['channel'] || 'pubnub-chat');
+    }
+
 
     function showNewest() {
         //document.querySelector('core-scaffold').$.headerPanel.scroller.scrollTop = document.querySelector('.chat-list').scrollHeight;
@@ -44,7 +49,7 @@
 
     var template = document.querySelector('template[is=auto-binding]');
 
-    template.channel = 'pubnub-chat';
+    template.channel = get_channel();
     template.uuid = uuid;
     template.avatar = avatar;
     template.color = color;
