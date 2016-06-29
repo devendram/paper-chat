@@ -115,6 +115,7 @@
     };
 
     template.subscribeCallback = function(e) {
+        console.log(JSON.stringify(e));
         if(template.$.sub.messages.length > 0) {
             /*
             console.log(template.$.sub.messages);
