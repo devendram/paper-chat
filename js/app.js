@@ -61,8 +61,8 @@
     
     template.lang = get_lang();
 
-    template.sub_channel = (template.lang !== null)?
-                            (template.channel + '-' + template.lang):template.channel;
+    template.sub_channel = (template.lang == null)?template.channel:
+                            (template.channel + '-' + template.lang);
 
     console.log('SUB Channel : ' + template.sub_channel);
 
