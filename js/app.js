@@ -135,8 +135,9 @@
             var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
             this.displayChatList(a);
             console.log(JSON.stringify(msg));
-            if (msg.speech) {
+            if (msg.speech && !msg.played) {
                 var speech = new Audio(msg.speech);
+                msg.played = true;
                 speech.play();
             }
         }
