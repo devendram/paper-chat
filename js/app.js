@@ -115,7 +115,7 @@
     };
 
     template.subscribeCallback = function(e) {
-
+        console.log('SUB CALLBACK');
         if(template.$.sub.messages.length > 0) {
             /*
             console.log(template.$.sub.messages);
