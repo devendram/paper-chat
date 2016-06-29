@@ -62,9 +62,9 @@
     template.lang = get_lang();
     console.log(template.channel);
     console.log(typeof template.lang);
-    console.log(typeof template.lang === 'undefined');
+    console.log(template.lang === 'undefined');
     template.sub_channel = 
-    (typeof template.lang === 'undefined')?template.channel:
+    (template.lang === 'undefined')?template.channel:
                             (template.channel + '-' + template.lang);
 
     console.log('SUB Channel : ' + template.sub_channel);
