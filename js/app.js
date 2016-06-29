@@ -130,13 +130,13 @@
 
             */
             var len = template.$.sub.messages.length;
-            console.log(JSON.stringify(template.$.sub.messages[len - 1]));
-            
+            var msg = template.$.sub.messages[len - 1];
+
             var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
             this.displayChatList(a);
 
-            if (e.speech) {
-                var speech = new Audio(e.speech);
+            if (msg.speech) {
+                var speech = new Audio(msg.speech);
                 speech.play();
             }
         }
