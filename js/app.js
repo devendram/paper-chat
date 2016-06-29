@@ -129,7 +129,7 @@
             template.$.sub.messages[len - 1].text = gif;             
 
             */
-            console.log(template.$.sub.messages[len - 1]);
+            console.log(JSON.stringify(template.$.sub.messages[len - 1]));
             var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
             this.displayChatList(a);
 
