@@ -115,7 +115,7 @@
     };
 
     template.subscribeCallback = function(e) {
-        console.log(JSON.stringify(e));
+
         if(template.$.sub.messages.length > 0) {
             /*
             console.log(template.$.sub.messages);
@@ -129,7 +129,7 @@
             template.$.sub.messages[len - 1].text = gif;             
 
             */
-
+            console.log(template.$.sub.messages);
             var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
             this.displayChatList(a);
 
