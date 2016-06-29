@@ -30,7 +30,7 @@
 
     function get_lang() {
         console.log(get_url_vars()['lang']);
-        return (get_url_vars()['lang']);
+        return (get_url_vars()['lang'] || null);
     }
 
     function get_channel() {
@@ -60,7 +60,7 @@
     template.color = color;
     
     template.lang = get_lang();
-    template.sub_channel = (typeof (template.lang) !== 'undefined')?
+    template.sub_channel = (template.lang)?
                             template.channel + '-' + template.lang:template.channel;
 
     console.log('SUB Channel : ' + template.sub_channel);
