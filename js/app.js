@@ -38,6 +38,10 @@
         return (get_url_vars()['channel'] || 'pubnub-chat');
     }
 
+    function get_session() {
+        console.log(get_url_vars()['session']);
+        return (get_url_vars()['session']);
+    }
 
     function showNewest() {
         //document.querySelector('core-scaffold').$.headerPanel.scroller.scrollTop = document.querySelector('.chat-list').scrollHeight;
@@ -50,6 +54,7 @@
     var template = document.querySelector('template[is=auto-binding]');
 
     template.channel = get_channel();
+    template.session = get_session();
     template.uuid = uuid;
     template.avatar = avatar;
     template.color = color;
@@ -177,6 +182,9 @@
             timestamp: new Date().toISOString(),
             input_lang : template.lang
         };
+        if (template.session) {
+            template.$.pub.message['session_id'] = template.session;
+        }
         template.$.pub.publish();
         template.input = '';
     };
