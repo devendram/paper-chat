@@ -60,7 +60,9 @@
     template.color = color;
     
     template.lang = get_lang();
-
+    console.log(template.channel);
+    console.log(template.lang);
+    console.log(template.lang == null);
     template.sub_channel = (template.lang == null)?template.channel:
                             (template.channel + '-' + template.lang);
 
