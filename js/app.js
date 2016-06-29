@@ -30,7 +30,7 @@
 
     function get_lang() {
         console.log(get_url_vars()['lang']);
-        return (get_url_vars()['lang'] || 'en');
+        return (get_url_vars()['lang']);
     }
 
     function get_channel() {
@@ -126,10 +126,12 @@
             */
 
             var a = pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages))
-            console.log(a);
-
-
             this.displayChatList(a);
+
+            if (e.speech) {
+                var speech = new Audio(e.speech);
+                speech.play();
+            }
         }
     };
 
