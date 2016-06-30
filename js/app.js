@@ -136,7 +136,6 @@
             this.displayChatList(a);
             console.log(JSON.stringify(msg));
             if (msg.speech && !msg.played && msg.uuid !== uuid) {
-                msg.speech = msg.speech + '&watson-token=omhNtfnbBgV7qMsptjf%2F23Mj3vXCbbEGL3XkSZ%2Fiy%2Fgg0%2FAGdBLz8CDL7xlcdlv9LPBiF6bPSkHfmumadOphkZ4JU98p8ARI2EHoAicHCaV4xP7%2BP3lnnVU76ZI8gLFLbHmLmdq7hAegmizWjs0YRIkZq2Grz3B5wVIr3dR70w9q69sKIPJ72mQ0WQXeC7xh7twPWD%2BpN7YiznphsfWuiKvibb5o1k5Sjn3jxu%2FsaKrws1N1OTcYQh3dU90PomS%2BJB0BvnT7jIPZLnj41DSC6%2F%2BgS98JDKWQwub%2Fep0%2BItmSnbYPrVLnz7jdpd3wp6kkKB7VTVksCICJYyGaNYVJmoX2rxfLSI0CbT0LL%2Faut9sOQDMHc1piLQbp8LY7liR3ebgXpKPiY3Yh5f%2BsJLNpkcI1idcELC6KFkf92AAzS%2BFquB351OZ9V6IE7e1aAiekENks4KDsgdasp%2F0RAtiTkLmqvnqy61hUKzRjZ%2FPuMIQErKEpamga8r04GMtcRkBX5DiaVNbEGSEEqG26uL7u7Y38QFuFejw1HoA66N7uW0IeizepScGix08qaaCeg1hiHiTEtAkcQFP%2B2PHYlXNpfgMGrg24sHNsIJJobfKD7v%2Ff8m2dOWFI3WTPpnK7dEA1gzVXPXrgrrO0hw9SKKVZPJvT9Cu0Kf3JKipb3bbM19o%2F2bTLJQ8NPqmdczhJNqL18qQDYTdKmFQcZRG5%2BBONmIwoOTjFM%2BKI5Sdz%2FqheK4bclJLbap5BgQOMTBSpiLm61yKMnk9BtBo5KmDVAQxi5pQEfpZuSAHtl4xhta%2FmMOwxvA4cSSHSQWoYGeEgE1SrSKpret1tFMDd%2B7f29Tm2kw%3D%3D'
                 var speech = new Audio(msg.speech);
                 msg.played = true;
                 speech.play();
