@@ -157,7 +157,7 @@
                         console.log('401');
                         return;
                     }
-                    console.log(xhr.responseText);
+                    console.log(xhr.status);
                 }
             }
             xhr.onload = function(evt) {
