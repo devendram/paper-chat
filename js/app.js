@@ -142,14 +142,23 @@
                 speech.play();
                 */
             }
-                var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest();
             xhr.open('GET', 
-                encodeURI('https://stream.watsonplatform.net/text-to-speech/api?accept=audio/wav&voice=en-US_AllisonVoice&text=hello'), true);
+                encodeURI('https://079ee91c-2b83-44cd-b5e3-a664a63557de:0VNbEa6qc8AB@stream.watsonplatform.net/text-to-speech/api?accept=audio/wav&voice=en-US_AllisonVoice&text=hello'), true);
 
             //xhr.setRequestHeader("Authorization", "Basic " + btoa("079ee91c-2b83-44cd-b5e3-a664a63557de" + ":" + "0VNbEa6qc8AB"));
             
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.responseType = 'blob';
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState ==4) {
+                    if (xhr.status == 401) {
+                        console.log('401');
+                        return;
+                    }
+                    console.log(request.responseText);
+                }
+            }
             xhr.onload = function(evt) {
               var blob = new Blob([xhr.response], {type: 'audio/ogg'});
               var objectUrl = URL.createObjectUrl(blob);
@@ -162,8 +171,6 @@
             };
             xhr.onerror = function(error) {
                 console.log(JSON.stringify(error));
-                xhr.setRequestHeader("Authorization", "Basic " + btoa("079ee91c-2b83-44cd-b5e3-a664a63557de" + ":" + "0VNbEa6qc8AB"));
-                xhr.send();
             }
             //var data = JSON.stringify({text: yourTextToSynthesize});
             xhr.send();
