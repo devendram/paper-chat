@@ -144,7 +144,7 @@
             }
                 var xhr = new XMLHttpRequest();
             xhr.open('GET', encodeURI('https://stream.watsonplatform.net/text-to-speech/api?accept=audio/wav&voice=en-US_AllisonVoice&text=hello'), true);
-            xhr.setRequestHeader("Authorization", "Basic " + btoa("079ee91c-2b83-44cd-b5e3-a664a63557de" + ":" + "0VNbEa6qc8AB"));
+            //xhr.setRequestHeader("Authorization", "Basic " + btoa("079ee91c-2b83-44cd-b5e3-a664a63557de" + ":" + "0VNbEa6qc8AB"));
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.responseType = 'blob';
             xhr.onload = function(evt) {
