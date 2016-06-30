@@ -152,6 +152,7 @@
             xhr.responseType = 'blob';
             xhr.onreadystatechange = function() {
                 if (xhr.readyState ==4) {
+                    
                     if (xhr.status == 401) {
                         console.log('401');
                         return;
